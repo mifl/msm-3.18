@@ -1,11 +1,15 @@
 config DTC
 	bool
 
-config OF
-	bool
+menuconfig OF
+	bool "Device Tree and Open Firmware support"
+	help
+	  This option enables the device tree infrastructure.
+	  It is automatically selected by platforms that need it or can
+	  be enabled manually for unittests, overlays or
+	  compile-coverage.
 
-menu "Device Tree and Open Firmware support"
-	depends on OF
+if OF
 
 config OF_UNITTEST
 	bool "Device Tree runtime unit tests"
@@ -88,4 +92,4 @@ config OF_OVERLAY
 	select OF_DYNAMIC
 	select OF_RESOLVE
 
-endmenu # OF
+endif # OF
