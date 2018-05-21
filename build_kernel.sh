@@ -22,6 +22,10 @@ elif [ "$BUILD_SUBARCH" = "arm64" ]; then
 	GCC_SUBARCH=aarch64
 	GCC_SUBDIR=aarch64-linux-android
 	GCC_VERSION=4.9
+elif [ "$BUILD_SUBARCH" = "x86" ]; then
+	GCC_SUBARCH=x86
+	GCC_SUBDIR=x86_64-linux-android
+	GCC_VERSION=4.9
 fi
 export PATH=$(pwd)/../../../prebuilts/gcc/linux-x86/${GCC_SUBARCH}/${GCC_SUBDIR}-${GCC_VERSION}/bin:$PATH
 export CROSS_COMPILE=${GCC_SUBDIR}-
