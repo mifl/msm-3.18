@@ -5,11 +5,13 @@ if [ "$BUILD_SUBARCH" = "arm" ]; then
 	GCC_SUBDIR=arm-eabi
 elif [ "$BUILD_SUBARCH" = "arm64" ]; then
 	GCC_SUBDIR=aarch64-linux-android
+elif [ "$BUILD_SUBARCH" = "x86" ]; then
+	GCC_SUBDIR=x86_64-linux-androidkernel
 fi
 
 DEFCONFIG_FILE=$2
 if [ -z "$DEFCONFIG_FILE" ]; then
-	echo "Need defconfig file(msm_defconfig)!"
+	echo "Need defconfig file(defconfig)!"
 	exit -1
 fi
 
